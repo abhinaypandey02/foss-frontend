@@ -1,8 +1,9 @@
 /** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
-      title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+      title: `Leaderboard - FOSS Weekend`,
+    description:"Leaderboard for the FOSS Weekend, organised by Equinox, IIIT Lucknow",
+    siteUrl: `https://zen-sinoussi-ff9007.netlify.app/`
   },
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap","gatsby-plugin-offline","gatsby-plugin-preact"
     ,

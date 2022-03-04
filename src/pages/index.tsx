@@ -4,13 +4,15 @@ import {getLeaderboard} from "../backend/endpoint";
 import "./index.scss";
 import {graphql, useStaticQuery} from "gatsby";
 import BackgroundImage from 'gatsby-background-image'
+import SEO from "../components/SEO";
 const IndexPage = () => {
     const [standings, setStandings] = useState<{
         [key: string]: number
     }>({});
+
     useEffect(() => {
-        const result = getLeaderboard();
-        setStandings(result)
+        getLeaderboard().then(result=>setStandings(result));
+
     }, [])
 
     const data = useStaticQuery(graphql`
@@ -35,6 +37,7 @@ const IndexPage = () => {
     const imageData = data.allImageSharp.edges[0].node.fluid;
 
     return (<BackgroundImage fluid={imageData} id={"main-container"}>
+        <SEO/>
         <div className="headerContainer">
             <h2>IIITL FOSS Weekend</h2>
             <h4>Leaderboard</h4>
